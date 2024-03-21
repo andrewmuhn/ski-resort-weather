@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA" serialisationVersion="2">
+    <checkstyleVersion>10.13.0</checkstyleVersion>
+    <scanScope>JavaOnly</scanScope>
+    <option name="thirdPartyClasspath">
+      <option value="$USER_HOME$/Downloads/code-quality-1.29.jar" />
+    </option>
+    <option name="activeLocationIds">
+      <option value="82976a5c-a39c-4512-80be-ee07aa9c7b4f" />
+    </option>
+    <option name="locations">
+      <list>
+        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="82976a5c-a39c-4512-80be-ee07aa9c7b4f" type="PLUGIN_CLASSPATH" scope="All" description="Cvent Checks">cvent_checks.xml</ConfigurationLocation>
+      </list>
+    </option>
+  </component>
+</project>
