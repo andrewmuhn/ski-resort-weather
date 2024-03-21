@@ -37,4 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-config.properties
+ski-resort-info-cli/src/main/resources/config.properties
