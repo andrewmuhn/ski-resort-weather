@@ -54,7 +54,7 @@
 ### Installation
 To get started make sure you have java version 17+ installed and any version of postgres. Then you can clone the repository and open it in your favorite IDE. 
 You will need to create a postgres database and set the environment variables for the database url, username, and password.
-You can do this by creating a database.properties file in the ski-resort-info-repository/src/main/resources directory. The file should look like this:
+You can do this by opening the database.properties file in the ski-resort-info-repository/src/main/resources directory and renaming the values present. The file should look like this:
 
 ```yaml
   postgres.username = YOUR_POSTGRES_USERNAME
@@ -123,7 +123,8 @@ Andrew Muhn - [andrewmuhn](https://github.com/andrewmuhn) - andrewmuhn@gmail.com
   <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 ![edX][edX]
-![cs50-Duck][cs50-Duck]
+
+[//]: # (![cs50-Duck][cs50-Duck])
 
 Thanks to cs50 for a great experience!<br>
 
