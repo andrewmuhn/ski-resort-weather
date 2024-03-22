@@ -1,4 +1,4 @@
-#Dopamine-Box
+#Ski Resort Weather CLI
 
   <!-- TABLE OF CONTENTS -->
   <details>
