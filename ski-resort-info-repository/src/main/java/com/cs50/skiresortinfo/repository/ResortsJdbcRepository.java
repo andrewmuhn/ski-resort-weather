@@ -2,6 +2,8 @@ package com.cs50.skiresortinfo.repository;
 
 import com.cs50.skiresortinfo.domain.Resort;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -9,13 +11,16 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.util.Properties;
 
 public class ResortsJdbcRepository implements ResortsRepository {
 
     private static final String POSTGRES_DATABASE_URL = "jdbc:postgresql://localhost:5432/resorts";
 
-    private static final String POSTGRES_USER = "postgres";
-    private static final String POSTGRES_PASSWORD = "password";
+    private static final String POSTGRES_USER = getSecret("postgres.username");
+
+    private static final String POSTGRES_PASSWORD = getSecret("postgres.password");
+
 
     private static final String INSERT_RESORT = """
         INSERT INTO resorts (slug, name, country, region, url, latitude, longitude)
@@ -96,6 +101,17 @@ public class ResortsJdbcRepository implements ResortsRepository {
 
         } catch (SQLException e) {
             throw new RepositoryException("Failed to get resort", e);
+        }
+    }
+
+    private static String getSecret(String s) {
+        try (InputStream propertiesStream =
+                     ResortsJdbcRepository.class.getResourceAsStream("/database.properties")) {
+            Properties properties = new Properties();
+            properties.load(propertiesStream);
+            return properties.getProperty(s);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

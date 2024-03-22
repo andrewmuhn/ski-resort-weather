@@ -7,11 +7,17 @@
       <li>
         <a href="#about-the-project">About The Project</a>
         <ul>
-          <li><a href="#Project Image">Project Images</a></li>
+          <li><a href="#description">Description</a></li>
           <li><a href="#built-with">Built With</a></li>
         </ul>
       </li>
-      <li><a href="#usage">Usage</a></li>
+      <li>
+        <a href="#usage">Usage</a>
+        <ul>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#Running-The-Application">Running The Application</a></li>
+        </ul>
+      </li>
       <li><a href="#contributing">Contributing</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -23,8 +29,10 @@
 
   <!-- ABOUT THE PROJECT -->
 ## About The Project
-### Project Images
 
+### Description
+
+  This project is a simple CLI written in java utilizing maven as a package manger. It allows the user to get current and forecasted weather for various ski resorts around the world. It was completed for the 2024 cs50 asynchronous course hosted by edX.
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -37,20 +45,30 @@
 - [![Apache Maven][Apache-Maven]][Apache-Maven-url]
 - [![Open-Weather][Open-Weather]][Open-Weather-url]
 
-  [//]: # (- [![JUnit5][JUnit5]][JUnit5-url])
-- [![][]][]
-- [![][]][]
-- [![][]][]
-- [![][]][]
-
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-  <!-- USAGE EXAMPLES -->
+  <!-- USAGE -->
 
-## Usage <br>
+## Usage
 
-To get started make sure you have java version 17+ installed. Then you can clone the repository and open it in your favorite IDE. 
-You will need to create a postgres database and set the environment variables for the database url, username, and password. You will also need to get an api key from open weather and set that as an environment variable.
+### Installation
+To get started make sure you have java version 17+ installed and any version of postgres. Then you can clone the repository and open it in your favorite IDE. 
+You will need to create a postgres database and set the environment variables for the database url, username, and password.
+You can do this by creating a database.properties file in the ski-resort-info-repository/src/main/resources directory. The file should look like this:
+
+```yaml
+  postgres.username = YOUR_POSTGRES_USERNAME
+  postgres.password = YOUR_POSTGRES_PASSWORD
+```
+
+You can then initialize the database by running the db_init.sql file from the terminal.
+You can do this by running the following command from a terminal:
+    
+```sh
+    psql -U YOUR_POSTGRES_USERNAME -f db_init.sql
+```
+
+You will also need to get an api key from open weather and set that as an environment variable.
 You will do this by creating a file called configs.properties in the ski-resort-info-cli/src/main/resources directory. The file should look like this:
 
 ```yaml
@@ -59,13 +77,24 @@ You will do this by creating a file called configs.properties in the ski-resort-
   open-weather-map.api-key = YOUR-API-KEY
   open-weather-map.api-url = https://api.openweathermap.org/data/2.5/
 ```
-Once you have the environment variables set you can run the application and it will create the necessary tables in the database. You can then use the application by navigating to the location the project is cloned to and then run the following command in your preferred terminal: 
+
+You will then need to seed the ski resort database by running the ResortRetriever class from the IDE. This makes an api call to an external resource that contains ski resort info.
+
+Once you have the environment variables and database setup you are ready to run the application.
+You can run the following command from the terminal or run can run the WeatherRetriever from your IDE:
 
 ```sh
 java -jar ski-resort-info-cli/target/ski-resort-info-cli-1.0-SNAPSHOT.jar
 ```
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Running The Application
 
+Once the app is running you will be presented with a simple CLI with a main menu. 
+You can navigate to each selection by typing in the command you wish to execute and hitting enter.
+(ie. 'weather' to enter the weather menu)
+
+The application allows you to look up real time weather data for a ski resort as well as a list of ski resort you can call upon from within this application. The application can provide current weather or a 5 day forecast.
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -95,6 +124,7 @@ Andrew Muhn - [andrewmuhn](https://github.com/andrewmuhn) - andrewmuhn@gmail.com
 ## Acknowledgments
 ![edX][edX]
 ![cs50-Duck][cs50-Duck]
+
 Thanks to cs50 for a great experience!<br>
 
 <!-- MARKDOWN LINKS & IMAGES -->

@@ -38,3 +38,4 @@ build/
 .DS_Store
 
 ski-resort-info-cli/src/main/resources/config.properties
+ski-resort-info-repository/src/main/resources/database.properties
