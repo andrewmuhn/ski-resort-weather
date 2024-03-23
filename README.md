@@ -7,6 +7,7 @@
       <li>
         <a href="#about-the-project">About The Project</a>
         <ul>
+          <li><a href="#video-demo">Video Demo</a></li>
           <li><a href="#description">Description</a></li>
           <li><a href="#built-with">Built With</a></li>
         </ul>
@@ -29,6 +30,10 @@
 
   <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+### Video Demo
+
+Watch the Video: https://drive.google.com/file/d/188f4F4EOEzVIppDXtARgWloIW088L58g/view
 
 ### Description
 
