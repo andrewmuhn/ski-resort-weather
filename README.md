@@ -9,6 +9,7 @@
         <ul>
           <li><a href="#video-demo">Video Demo</a></li>
           <li><a href="#description">Description</a></li>
+          <li><a href="#project-repo">Project Repo</a></li>
           <li><a href="#built-with">Built With</a></li>
         </ul>
       </li>
@@ -38,9 +39,25 @@ Watch the Video: https://drive.google.com/file/d/188f4F4EOEzVIppDXtARgWloIW088L5
 ### Description
 
   This project is a simple CLI written in java utilizing maven as a package manger. It allows the user to get current and forecasted weather for various ski resorts around the world. It was completed for the 2024 cs50 asynchronous course hosted by edX.
+
+  The project is broken into 3 different modules:
+
+1. **ski-resort-info-repository**: 
+
+    This module contains the jdbc connections to a postgres database. the db_init.sql file with create the needed table if you do not already have it. It essentially just takes the data from the ski resort api and strip away the needless info, converts it to a java record, and then saves it to the local postgres database. The benifit of doing this is mainly that it reduces traffic to third party API that limits calls. The other aspect would be that it allows for the list of resorts to grow if there are other databases of resort info you could access or if you wanted to manually add your own.
+2. **ski-resort-info-server**:
+
+    This module is actually unecessary in the current stage of this application. This allows the data held in the repository to be hosted on a server. In future development this is how i would go about hosting the whole application and creating some sort of gui or front end interface.
+3. **ski-resort-info-cli**:
+   
+    This is the main module of the application. It is broken into two main parts. The resort retriever and the weather retriever. The Resort retriever is a one time use functionality that makes the api call to the resort list and saves it to the repository mentioned above. If you are setting up the project locally you need to run this step once essentially a seed data step. The second part, the weather retriever, is the bulk of the program. It's the cli that allows the user to make api calls to a weather api based of the the resorts in our local database.
+
+
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Project Repo
 
+https://github.com/andrewmuhn/ski-resort-weather?tab=readme-ov-file#installation
 
 ### Built With
 
